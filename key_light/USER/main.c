@@ -5,6 +5,7 @@
 #define B_LED GPIO_Pin_1
 
 #define KEY1  GPIO_Pin_0 
+#define KEY2  GPIO_Pin_13
 
 void LED_GPIO_Config()
 {
@@ -30,7 +31,7 @@ void LED_GPIO_Config()
 		GPIO_SetBits(GPIOB, GPIO_Pin_5);
 }
 
-void KEY_Init(void)
+void KEY1_Init(void)
 {
     GPIO_InitTypeDef  GPIO_InitStructure; //构造结构体 
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);//使能其所在时钟        
@@ -40,28 +41,29 @@ void KEY_Init(void)
     GPIO_Init(GPIOA,&GPIO_InitStructure);
 }
 
-
-void delay(u32 t)            //延时函数
+void KEY2_Init(void)
 {
-    u16 i;
-    while(t--)
-        for(i=0;i<1000;i++);
+    GPIO_InitTypeDef  GPIO_InitStructure; //构造结构体 
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC,ENABLE);//使能其所在时钟        
+    GPIO_InitStructure.GPIO_Pin = KEY2;//定义IO端口                       
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;//定义IO端口模式为浮空输入      
+  
+    GPIO_Init(GPIOC,&GPIO_InitStructure);
 }
 
 int main()
 {
 	uint16_t s = 0;
 	LED_GPIO_Config();            //GPIOD初始化配置
-	KEY_Init();										//KEY1 初始化 
+	KEY1_Init();										//KEY1 初始化 
+	KEY2_Init();										//KEY2 初始化
 	while(1)
 	{
-		if(GPIO_ReadInputDataBit(GPIOA,KEY1))
+		if(GPIO_ReadInputDataBit(GPIOA,KEY1)||GPIO_ReadInputDataBit(GPIOC,KEY2))
 		{
-			delay(2000);
-			if(GPIO_ReadInputDataBit(GPIOA,KEY1))
-			{
-				s = s+1;
-			}
+			while(GPIO_ReadInputDataBit(GPIOA,KEY1)||GPIO_ReadInputDataBit(GPIOC,KEY2));
+			s++;
+			
 		}
 		if(s%2 == 0)
 		{

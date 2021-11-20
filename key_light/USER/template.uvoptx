@@ -127,7 +127,7 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>78</LineNumber>
+          <LineNumber>61</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -143,7 +143,7 @@
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>63</LineNumber>
+          <LineNumber>50</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -159,22 +159,6 @@
         <Bp>
           <Number>2</Number>
           <Type>0</Type>
-          <LineNumber>75</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>.\main.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>3</Number>
-          <Type>0</Type>
           <LineNumber>50</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
@@ -184,7 +168,23 @@
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>0</BreakIfRCount>
-          <Filename>.\main.c</Filename>
+          <Filename>..\USER\stm32f10x.h</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>3</Number>
+          <Type>0</Type>
+          <LineNumber>61</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>..\USER\stm32f10x.h</Filename>
           <ExecCommand></ExecCommand>
           <Expression></Expression>
         </Bp>
