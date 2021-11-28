@@ -5,7 +5,7 @@
 
 void Delay_Ms(__IO uint32_t nTime);
 void TimingDelay_Decrement(void);
-void SysTick_Delay_Ms( __IO uint32_t ms);
+void SysTick_Delay_Ms(__IO uint32_t ms);
 
 
 #endif
