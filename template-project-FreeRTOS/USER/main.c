@@ -73,7 +73,7 @@ int main()
 
 void start_task(void *pvParameters)
 {
-	taskENTER_CRITICAL();		//进入临界区
+	taskENTER_CRITICAL();								//进入临界区
 	
 	//创建LED1任务函数
 	xTaskCreate((TaskFunction_t	)led1_task, 					//任务函数
